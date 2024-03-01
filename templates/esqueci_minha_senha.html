@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pega Visão - Redefinir Senha</title>
+    <link href="../static/css/home.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="redefinir">
+        <div class="redefinir-box">
+            <h1>Esqueceu a senha?</h1>
+            <p style="font-size: 15px; margin-bottom: 10px;">Nós entendemos, coisas acontecem. Basta inserir o <strong>e-mail cadastrado</strong> e iremos enviar a sua nova senha!</p>
+            <form method="POST">
+                <label style="font-size: 15px;" for="email">E-mail:</label><br>
+                <input type="email" name="email" placeholder="Inserir e-mail" required><br>
+                <input type="submit" value="Redefinir Senha">
+            </form>
+            <a href="{{ url_for('home') }}"></a>
+            <div style="margin-top: 10px; font-size: 13px; text-align: center;">
+                {% if mensagem %}
+                <p style="text-align: center;">{{ mensagem }}</p>
+                {% endif %}
+            </div>
+        </div>
+        
+    </section>
+    
+    
+</body>
+</html>

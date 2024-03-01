@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pega Visão - Cadastrar</title>
+    <link href="../static/css/home.css" rel="stylesheet" />
+</head>
+<body >
+    <section class="criarconta-container">
+        <div class="criarconta-container-box">
+            <div class="criarconta-logo"><img src="../static/image/logo3.png" alt=""></div>
+            <div class="criarconta">
+                <h1  style="margin-bottom: 20px; color: black;">Criar conta</h1>
+                <form action="{{ url_for('cadastro') }}" method="post">
+                    <label for="nome">Nome:</label>
+                    <input placeholder="Digite seu nome" type="text" id="nome" name="nome" value="{{ nome }}" required><br>
+                    <label for="email">E-mail:</label>
+                    <input placeholder="Digite seu e-mail" type="email" id="email" name="email" value="{{ email }}" required><br>
+                    <label for="senha">Senha:</label>
+                    <input placeholder="Senha" type="password" id="senha" name="senha" required><br>
+                    <label for="funcao">Função:</label>
+                    <select style="display: none;" id="funcao" name="funcao" required>
+                        {% for funcao in funcoes %}
+                        <option value="{{ funcao }}">{{ funcao }}</option>
+                        {% endfor %}
+                    </select><br>
+                    <div class="mensagem">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                    <div class="alert alert-{{ category }}">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </div> 
+                    <input style="cursor: pointer;" type="submit" value="Criar Conta">
+                </form> 
+                <a style="text-align: center; font-size: 14px;" href="{{ url_for('home') }}">Já tem conta? Conecte-se!</a>
+                    
+                
+            </div>
+        </div>
+        
+    </section>
+    
+    
+</body>
+</html>
