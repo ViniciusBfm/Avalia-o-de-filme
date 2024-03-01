@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pega Visão - Cadastrar</title>
     <link href="../static/css/home.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image-x/png" href="../static/image/icon.ico">
 </head>
 <body >
     <section class="criarconta-container">
@@ -20,7 +21,7 @@
                     <input placeholder="Digite seu e-mail" type="email" id="email" name="email" value="{{ email }}" required><br>
                     <label for="senha">Senha:</label>
                     <input placeholder="Senha" type="password" id="senha" name="senha" required><br>
-                    <label for="funcao">Função:</label>
+                    <label style="display: none;"  for="funcao">Função:</label>
                     <select style="display: none;" id="funcao" name="funcao" required>
                         {% for funcao in funcoes %}
                         <option value="{{ funcao }}">{{ funcao }}</option>
