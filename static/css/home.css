@@ -1031,8 +1031,11 @@ textarea {
   }
 }
 @media screen and (max-width: 416px) {
-.todosfilmes-container-box{
+.todosfilmes-container-box, .todosfilmes-container-box-maisavaliados{
   justify-content: center;
+  }
+  header .pesquisar-box .pesquisar-btn {
+    width: 90%;
   }
   .filmes-box-container {
     justify-content: center;
