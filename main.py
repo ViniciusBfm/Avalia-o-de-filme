@@ -406,7 +406,7 @@ def pesquisar():
 
 if __name__ == '__main__':
     # Criar tabela de usuários se não existir
-    with create_connection() as conn:
+        conn = sqlite3.connect('pegavisao.db')
         cursor = conn.cursor()
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS usuarios (
@@ -417,7 +417,6 @@ if __name__ == '__main__':
                 email TEXT NOT NULL
             );
         ''')
-        conn.commit()
 
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS filmesseries (
@@ -446,9 +445,7 @@ if __name__ == '__main__':
             );
         ''')
 
-
-
-
-
         conn.commit()
-    app.run(debug=True)
+        conn.close()
+
+        app.run(debug=True)
